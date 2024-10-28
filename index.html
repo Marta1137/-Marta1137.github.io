@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title> Froogle </title>
+</head>
+
+<body style="background-color: #b6ecaf;">
+	<div class="top">
+	<Font color= "black" Size="7"> <center> <span style="font-family:baskerville old face "> Froogle </span> </center> </Font>
+	</div>
+		
+		<center> <h3> Cześć! </h3>
+		<p> Jesteś na stronie, która służy do wyszukiwania informacji
+		o płazach bezogonowych występujących jedynie w Polsce. 
+		Będą one wyświetlane na podstawie filtrów, które wybierzesz.
+		Życze ci miłej zabawy i owocnego zdobywania wiedzy! </center>  </p>
+		
+		<h4> Wybierz cechy płazów, które cię interesują: </h4>
+		
+
+
+	<td> <thead> <p> Rodzina </p> </thead>
+	<input id="button" type="submit" name="button" onclick="Zabowate();" value="Żabowate"/>
+	<input id="button" type="submit" name="button" onclick="Ropuchowate();" value="Ropuchowate"/>
+	<input id="button" type="submit" name="button" onclick="Ropuszkowate();" value="Ropuszkowate"/>
+	<input id="button" type="submit" name="button" onclick="Grzebiuszkowate();" value="Grzebiuszkowate"/>
+	<input id="button" type="submit" name="button" onclick="Rzekotkowate();" value="Rzekotkowate"/>
+	</td>
+	<thead> <p> Kolor</p> </thead>
+	<td>
+	<input id="button" type="submit" name="button" onclick="Zielony();" value="Zielony"/>
+	<input id="button" type="submit" name="button" onclick="Brunatny();" value="Brunatnyy"/>
+	<input id="button" type="submit" name="button" onclick="Szary();" value="Szary"/>
+	<input id="button" type="submit" name="button" onclick="Zolty();" value="Żółty"/>
+<script>
+function Zabowate (){
+alert("Button was clicked");
+};
+function Ropuchowate (){
+alert (" żaba żabowata ");
+};
+function Zielony (){
+alert("Button was clicked");
+};
+	</script>
+	</td>
+	<thead> <p> Czy ma plamki? </p> </thead>
+	<td>
+	<button type= "button" > Tak </button>
+	<button type= "button" > Nie </button>
+	</td>
+	<thead> <p> Niebezpieczeństwo </p> </thead>
+	<td>
+	<button type= "button" > Jadowity </button>
+	<button type= "button" > Niejadowity </button>
+	</td>
+	<!--<div class="border" id="wyniki"> -->
+	</div>
+
+	
+</body>
+</html>
