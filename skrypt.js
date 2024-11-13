@@ -1,12 +1,18 @@
-
 function Zabowate (){
-alert("You clicked me");
-};
+	document.getElementById("Zabowate").innerHTML = "Żaba jeziorkowa, Żaba śmieszka, Żaba wodna, Żaba trawna, Żaba moczarowa, Żaba zwinka"
+}
 function Ropuchowate (){
-alert (" żaba żabowata ");
-};
-function Zielony (){
-alert("Button was clicked");
+	document.getElementById("Ropuchowate").innerHTML = "Ropucha zielona, Ropucha szara, Ropucha paskówka "
+}
+function Ropuszkowate (){
+	document.getElementById("Ropuszkowate").innerHTML = "Kumak nizinny, Kumak górski"
+}
+function Grzebiuszkowate (){
+	document.getElementById("Grzebiuszkowate").innerHTML = "Grzebiuszka ziemna "
+}
+function Rzekotkowate (){
+	document.getElementById("Rzekotkowate").innerHTML = "Rzekotka drzewna "
+}
 
-};
+
 	
