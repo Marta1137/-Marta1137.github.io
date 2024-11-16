@@ -1,18 +1,40 @@
-function Zabowate (){
-	document.getElementById("Zabowate").innerHTML = "Żaba jeziorkowa, Żaba śmieszka, Żaba wodna, Żaba trawna, Żaba moczarowa, Żaba zwinka"
+function Zabowate() {
+    const container = document.getElementById('button-container');
+    
+    container.innerHTML = '';
+
+    const ZabowatePrzyciski = ['Żaba jeziorkowa', ' Żaba śmieszka', 'Żaba wodna', 'Żaba trawna', 'Żaba moczarowa', 'Żaba zwinka'];
+	const buttonsToHide = [];
+   
+   ZabowatePrzyciski.forEach(function(name) {
+        const button = document.createElement('button');
+        button.textContent = name;
+		button.style.margin = '5px';
+		
+		if (name === 'Żaba trawna' || name === 'Żaba moczarowa' || name === 'Żaba zwinka') {
+            button.classList.add('nieZielone');
+            buttonsToHide.push(button);
+        }
+		
+        container.appendChild(button);
+    });
+	window.buttonsToHide = buttonsToHide;
 }
-function Ropuchowate (){
-	document.getElementById("Ropuchowate").innerHTML = "Ropucha zielona, Ropucha szara, Ropucha paskówka "
+function Zielony() {
+    if (window.buttonsToHide) {
+        window.buttonsToHide.forEach(function(button) {
+            button.style.display = 'none';
+        });
+    }
 }
-function Ropuszkowate (){
-	document.getElementById("Ropuszkowate").innerHTML = "Kumak nizinny, Kumak górski"
-}
-function Grzebiuszkowate (){
-	document.getElementById("Grzebiuszkowate").innerHTML = "Grzebiuszka ziemna "
-}
-function Rzekotkowate (){
-	document.getElementById("Rzekotkowate").innerHTML = "Rzekotka drzewna "
+function Nie() {
+    const container = document.getElementById('button-container');
+    container.innerHTML = '';
+
+    const button = document.createElement('button');
+    button.textContent = 'Rzekotka';
+    button.style.margin = '5px';
+    container.appendChild(button);
 }
 
-
-	
+	// "Żaba jeziorkowa, Żaba śmieszka, , Żaba trawna, Żaba moczarowa, Żaba zwinka"
