@@ -1,121 +1,52 @@
-function Zabowate() {
-    const container = document.getElementById('button-container');
-    
-    container.innerHTML = '';
+const zabList = [
+    { nazwa: "Żaba jeziorkowa", rodzina: "Żabowate", kolory: ["zielony"] },
+    { nazwa: "Żaba śmieszka", rodzina: "Żabowate", kolory: ["zielony", "brunatny"] },
+    { nazwa: "Żaba wodna", rodzina: "Żabowate", kolory: ["zielony"] },
+    { nazwa: "Żaba zwinka", rodzina: "Żabowate", kolory: ["brunatny"] },
+    { nazwa: "Żaba moczarowa", rodzina: "Żabowate", kolory: ["brunatny"] },
+    { nazwa: "Żaba trawna", rodzina: "Żabowate", kolory: ["brunatny"] },
 
-    const ZabowatePrzyciski = ['Żaba jeziorkowa', ' Żaba śmieszka', 'Żaba wodna', 'Żaba trawna', 'Żaba moczarowa', 'Żaba zwinka'];
-	const buttonsToHide = [];
-   
-   ZabowatePrzyciski.forEach(function(name) {
-        const button = document.createElement('button');
-        button.textContent = name;
-		button.style.margin = '5px';
-		
-		if (name === 'Żaba trawna' || name === 'Żaba moczarowa' || name === 'Żaba zwinka') {
-            button.classList.add('nieZielone');
-            buttonsToHide.push(button);
-        }
-		
-		if (name === 'Żaba jeziorkowa') {
-			button.onclick = function(){
-				window.open('https://pl.wikipedia.org/wiki/%C5%BBaba_jeziorkowa', 'blank'); //zmienić link na własną stronę !!!!
-			};
-		}
-        container.appendChild(button);
+    { nazwa: "Ropucha szara", rodzina: "Ropuchowate", kolory: ["szary"] },
+    { nazwa: "Ropucha zielona", rodzina: "Ropuchowate", kolory: ["brunatny", "zielony"] },
+    { nazwa: "Ropucha paskówka", rodzina: "Ropuchowate", kolory: ["brunatny"] },
+
+    { nazwa: "Rzekotka drzewna", rodzina: "Rzekotkowate", kolory: ["zielony"] },
+    { nazwa: "Grzebiuszka ziemna", rodzina: "Grzebiuszkowate", kolory: ["brunatny"] }
+];
+
+let selectedRodzina = null;
+let selectedKolor = null;
+
+function filtrujIWyswietl() {
+    const wyniki = zabList.filter(zaba => {
+        return (
+            (!selectedRodzina || zaba.rodzina === selectedRodzina) &&
+            (!selectedKolor || zaba.kolory.includes(selectedKolor))
+        );
     });
-	window.buttonsToHide = buttonsToHide;
-}
-function Ropuchowate() {
-    const container = document.getElementById('button-container');
-    
-    container.innerHTML = '';
 
-    const RopuchowatePrzyciski = ['Ropucha zielona', ' Ropucha szara ', 'Ropucha paskówka'];
-	
-   RopuchowatePrzyciski.forEach(function(name) {
-        const button = document.createElement('button');
-        button.textContent = name;
-		button.style.margin = '5px';
-		
-		if (name === ' Ropucha szara ') {
-			button.onclick = function(){
-				window.open('https://pl.wikipedia.org/wiki/Ropucha_szara', 'blank'); //zmienić link na własną stronę !!!!
-			};
-		}
-		
-		container.appendChild(button);
-   });
-}
+    const wynikiDiv = document.getElementById("wyniki");
+    wynikiDiv.innerHTML = "";
 
-function Ropuszkowate() {
-    const container = document.getElementById('button-container');
-    
-    container.innerHTML = '';
-
-    const RopuszkowatePrzyciski = ['Kumak nizinny', ' Kumak górski '];
-	
-   RopuszkowatePrzyciski.forEach(function(name) {
-        const button = document.createElement('button');
-        button.textContent = name;
-		button.style.margin = '5px';
-		container.appendChild(button);
-   });
-}
-
-function Grzebiuszkowate() {
-    const container = document.getElementById('button-container');
-    
-    container.innerHTML = '';
-
-    const GrzebiuszkowatePrzyciski = ['Grzebiuszka ziemna'];
-	
-   GrzebiuszkowatePrzyciski.forEach(function(name) {
-        const button = document.createElement('button');
-        button.textContent = name;
-		button.style.margin = '5px';
-		container.appendChild(button);
-   });
-}
-
-function Rzekotkowate() {
-    const container = document.getElementById('button-container');
-    
-    container.innerHTML = '';
-
-    const RzekotkowatePrzyciski = ['Rzekotka drzewna'];
-	
-   RzekotkowatePrzyciski.forEach(function(name) {
-        const button = document.createElement('button');
-        button.textContent = name;
-		button.style.margin = '5px';
-		container.appendChild(button);
-   });
-}
-
-function Zielony() {
-    if (window.buttonsToHide) {
-        window.buttonsToHide.forEach(function(button) {
-            button.style.display = 'none';
+    if (wyniki.length > 0) {
+        wyniki.forEach(zaba => {
+            const button = document.createElement("button");
+            button.textContent = zaba.nazwa;
+            button.classList.add("result-button");
+            button.onclick = () => alert(`Kliknięto: ${zaba.nazwa}`);
+            wynikiDiv.appendChild(button);
         });
+    } else {
+        wynikiDiv.textContent = "Nie ma takiej żabki :(";
     }
 }
-function Nie() {
-    const container = document.getElementById('button-container');
-    container.innerHTML = '';
 
-    const button = document.createElement('button');
-    button.textContent = 'Rzekotka drzewna';
-    button.style.margin = '5px';
-    container.appendChild(button);
+function WyRodzina(rodzina) {
+    selectedRodzina = rodzina;
+    filtrujIWyswietl();
 }
 
-function Jadowity() {
-    const container = document.getElementById('button-container');
-    container.innerHTML = '';
-
-    const button = document.createElement('button');
-    button.textContent = 'Ropucha szara';
-    button.style.margin = '5px';
-    container.appendChild(button);
-	
+function WynikiKolor(kolor) {
+    selectedKolor = kolor;
+    filtrujIWyswietl();
 }

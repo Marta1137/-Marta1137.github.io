@@ -1,5 +1,88 @@
-.border {
-	border-width: 1em;
-	border-color: black;
-	border-style: dotted;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+	background-color: #cef7c9;
+}
+
+header span {
+    color: white; 
+}
+
+header {
+    background-color: #599b50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    padding: 20px;
+    text-align: center;
+}
+
+.main h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.main p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.cechy-rodzina {
+    text-align: center;
+}
+.cechy-kolor {
+    text-align: center;
+}
+
+.result-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #44c061;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result-button:hover {
+    background-color: #21af41;
+}
 }
