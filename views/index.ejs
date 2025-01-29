@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tytul %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <font color="black" size="8"> 
+            <center> 
+                <span style="font-family:baskerville old face"> Froogle </span> 
+            </center> 
+        </font>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/lista">Lista płazów</a>
+            <a href="zrodla">Źródła</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Lista żab:</h2>
+        <ul>
+            <% zabLista.forEach(zaba => { %>
+                <li>
+
+                    <a href="/zaba/<%= zaba.nazwa.toLowerCase().replace(/\s+/g, '-') %>">
+                        <%= zaba.nazwa %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+</body>
+</html>

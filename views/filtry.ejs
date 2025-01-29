@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tytul %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Baskerville Old Face', serif; font-size: 50px; color: white; text-align: center;">
+            Froogle
+        </h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/lista">Lista płazów</a>
+            <a href="zrodla">Źródła</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Filtruj żaby</h2>
+        <form action="/filtry" method="POST">
+            <div>
+                <label for="kolor">Kolor:</label>
+                <select name="kolor" id="kolor">
+                    <option value="">Dowolny</option>
+                    <option value="zielony">Zielony</option>
+                    <option value="brunatny">Brunatny</option>
+                    <option value="szary">Szary</option>
+                    <option value="żółty">Żółty</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="plamki">Plamki:</label>
+                <select name="plamki" id="plamki">
+                    <option value="">Dowolne</option>
+                    <option value="tak">Tak</option>
+                    <option value="nie">Nie</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="rodzina">Rodzina:</label>
+                <select name="rodzina" id="rodzina">
+                    <option value="">Dowolna</option>
+                    <option value="Żabowate">Żabowate</option>
+                    <option value="Ropuchowate">Ropuchowate</option>
+                    <option value="Ropuszkowate">Ropuszkowate</option>
+                    <option value="Rzekotkowate">Rzekotkowate</option>
+                    <option value="Grzebiuszkowate">Grzebiuszkowate</option>
+                </select>
+            </div>
+
+            <button type="submit">Filtruj</button>
+        </form>
+    </main>
+</body>
+</html>

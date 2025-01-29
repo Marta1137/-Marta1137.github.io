@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: times new roman;
+    line-height: 1.6;
+	background-color: #cef7c9;
+}
+
+header span {
+    color: white; 
+}
+
+header {
+    background-color: #599b50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    padding: 20px;
+    text-align: center;
+}
+
+.main h2, .main h3, .main h4 {
+    margin-bottom: 20px; 
+    color: #333; 
+}
+
+.main p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.cechy-rodzina {
+    text-align: center;
+}
+
+.cechy-kolor {
+    text-align: center;
+}
+
+.cechy-plamki {
+    text-align: center;
+}
+
+.result-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #44c061;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result-button:hover {
+    background-color: #21af41;
+}
+
+header {
+    margin-bottom: 10px; /* Zmniejszenie odstępu między nagłówkiem a resztą treści */
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px; /* Zmniejszenie odstępu między nagłówkiem a treścią */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Styl tekstu */
+.text {
+    flex: 1; /* Tekst zajmuje tyle miejsca, ile potrzeba */
+    margin-right: 20px; /* Odstęp między tekstem a obrazem */
+    text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+/* Styl obrazu */
+.image img {
+    max-width: 300px; /* Maksymalna szerokość obrazu */
+    height: auto; /* Automatyczne dopasowanie wysokości */
+}
+
+
+a {
+    text-decoration: none;
+    color: #2196f3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a.button-link {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #8bc34a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button-link:hover {
+    background-color: #7cb342;
+}
+
+a.return-link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #2196f3;
+}
+
+a.return-link:hover {
+    text-decoration: underline;
+}

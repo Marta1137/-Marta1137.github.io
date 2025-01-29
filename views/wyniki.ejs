@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tytul %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Baskerville Old Face'; font-size: 3rem; text-align: center;">
+            Froogle
+        </h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/lista">Lista płazów</a>
+            <a href="/zrodla">Źródła</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Wyniki filtrowania</h2>
+        <div>
+            <% if (wyniki.length > 0) { %>
+                <% wyniki.forEach(zaba => { %>
+                    <a href="/zaba/<%= zaba.nazwa.replace(/ /g, '-').toLowerCase() %>" 
+                       style="display: inline-block; margin: 5px; padding: 10px 20px; 
+                              background-color: #8bc34a; color: white; text-decoration: none; 
+                              border-radius: 5px;">
+                        <%= zaba.nazwa %>
+                    </a>
+                <% }) %>
+            <% } else { %>
+                <p>Nie ma takiej żabki :( </p>
+            <% } %>
+        </div>
+        <a href="/filtry" 
+           style="display: block; margin-top: 20px; text-decoration: none; color: #2196f3;">
+           Wróć do filtrów
+        </a>
+    </main>
+</body>
+</html>

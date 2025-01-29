@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tytul %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1><%= tytul %></h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/lista">Lista płazów</a>
+            <a href="/filtry">Filtry</a>
+        </nav>
+    </header>
+    <main style="padding: 20px;">
+        <p><strong>Rodzina:</strong> <%= zaba.rodzina %></p>
+        <p><strong>Kolory:</strong> <%= zaba.kolory.join(', ') %></p>
+        <p><strong>Plamki:</strong> <%= zaba.plamki === 'tak' ? 'Tak' : 'Nie' %></p>
+        <p><strong>Opis:</strong> <%= zaba.opis %></p>
+        
+        <a href="/filtry" style="display: block; margin-top: 20px; text-decoration: none; color: #2196f3;">Wróć do filtrów</a>
+    </main>
+</body>
+</html>
